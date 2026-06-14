@@ -1,4 +1,5 @@
 export default async function handler(req, res) {
+
   try {
 
     const GAS_URL =
@@ -7,25 +8,24 @@ export default async function handler(req, res) {
     const response = await fetch(GAS_URL, {
       method: req.method,
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
       body:
         req.method !== "GET"
           ? JSON.stringify(req.body)
-          : undefined,
+          : undefined
     });
 
     const data = await response.text();
-
-    res.setHeader("Content-Type", "application/json");
 
     res.status(200).send(data);
 
   } catch (err) {
 
     res.status(500).json({
-      error: err.toString(),
+      error: err.toString()
     });
 
   }
+
 }
