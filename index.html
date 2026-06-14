@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>My API</title>
+</head>
+<body>
+
+  <h1>API Running ✅</h1>
+
+  <button onclick="testAPI()">
+    Test API
+  </button>
+
+  <pre id="result"></pre>
+
+  <script>
+    async function testAPI() {
+
+      const res = await fetch('/api');
+
+      const data = await res.text();
+
+      document.getElementById('result').innerText = data;
+    }
+  </script>
+
+</body>
+</html>
