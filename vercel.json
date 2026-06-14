@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/billplai/index"
+      "destination": "/api/index"
     }
   ]
 }
